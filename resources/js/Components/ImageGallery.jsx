@@ -163,14 +163,14 @@ const ImageGallery = () => {
         <div
             ref={sectionRef}
             style={{ scrollBehavior: "smooth", columnCount: 4 }}
-            className="container gap-3"
+            className="m-3 rounded-md"
         >
             {images.map((src, index) => (
                 <div key={index}>
                     <img
                         src={src}
                         alt=""
-                        className="w-full shadow h-full object-cover rounded-md mb-3 border-1 border-gray-200 transition hover:opacity-75"
+                        className="w-full shadow h-full rounded-md object-cover mb-3 border-2 transition border-black/20 dark:border-white/20"
                     />
                 </div>
             ))}

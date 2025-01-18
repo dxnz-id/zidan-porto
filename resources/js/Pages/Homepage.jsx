@@ -6,8 +6,14 @@ import { Head } from "@inertiajs/react";
 import Footer from "@/Components/Footer";
 
 export default function Homepage(props) {
+    const navLinks = [
+        { label: "Home", url: "/#section-1" },
+        { label: "Projects", url: "/#section-2" },
+        { label: "About", url: "/about" },
+        { label: "Contact", url: "/contact" },
+    ];
     useEffect(() => {
-        const textArray = ["freelancer", "photographer"];
+        const textArray = ["freelancer.", "photographer."];
         let currentIndex = 0;
         let currentText = "";
         let isDeleting = false;
@@ -44,10 +50,11 @@ export default function Homepage(props) {
         <>
             <Head title="Portfolio" />
             <Cursor />
-            <div className="flex flex-col items-center justify-center text-gray-900 dark:bg-black dark:text-white">
-                <Navbar />
+            <div className="flex flex-col items-center justify-center text-gray-900 dark:bg-black dark:text-white transition">
+                <Navbar navLinks={navLinks} />
+
                 <section
-                    className="container h-screen flex items-center justify-center h-full text-center"
+                    className="container h-screen flex items-center justify-center text-center"
                     id="section-1"
                 >
                     <div>
@@ -63,9 +70,9 @@ export default function Homepage(props) {
                         </p>
                     </div>
                 </section>
-                <div className="h-screen"></div>
+                <div className="h-80"></div>
                 <section
-                    className="container flex flex-col min-h-screen bg-info items-center justify-center h-full text-center"
+                    className="container flex flex-col min-h-screen bg-info items-center justify-center h-full text-center pt-32"
                     id="section-2"
                 >
                     <h1 className="text-2xl mb-12 md:text-5xl font-bold">
